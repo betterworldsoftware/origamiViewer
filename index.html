@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crane Diagram</title>
+<style>
+body{margin:0;background:#f3efe6;color:#302b26;font:15px system-ui,sans-serif}main{max-width:1100px;margin:24px auto;padding:0 16px}h1{font-size:25px;margin-bottom:8px}p{line-height:1.5}
+canvas{display:block;width:100%;height:62vh;min-height:320px;background:#c9ccce;border-radius:12px;touch-action:none}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0}button,select{font:inherit;padding:8px 13px;background:#fff;border:1px solid #c8bcae;border-radius:6px;cursor:pointer}
+button:disabled,select:disabled{opacity:.5;cursor:default}
+input[type=range]{flex:1;min-width:100px}input[type=color]{width:42px;height:34px;padding:2px;border:1px solid #c8bcae;border-radius:6px;background:#fff}
+#status{padding:12px;background:#fff7df;border-radius:8px}output{min-width:45px;font-variant-numeric:tabular-nums}
+select{max-width:100%}
+</style></head><body><main>
+<h1>Crane</h1>
+<p>Each step opens on its starting state with its fold lines and arrows; Play makes the fold. Moving to the next step turns the model to the view that step is folded from.</p>
+<div class="controls"><button id="prev" disabled>◀ Step</button><label>Step <select id="step" disabled></select></label><button id="next" disabled>Step ▶</button><button id="play" disabled>Play</button><label for="frame">Fold</label><input id="frame" type="range" min="0" max="49" value="0" disabled><output id="percent">0%</output>
+<label>Paper <input id="paperColor" type="color" value="#b9663d"></label></div>
+<p id="status">Starting…</p>
+<canvas id="gl" aria-label="Three-dimensional crane diagram"></canvas>
+<div class="controls"><button data-view="oblique">Overview</button><button data-view="top">Top</button><button data-view="side">Layer view</button><button data-view="under">Underside</button></div>
+<p><strong>Key.</strong> Dashed line: valley fold. Dash-dot-dot line: mountain fold. Thin solid line: existing crease. Arrows arc on the outside of the flap they move and are hidden by paper in front of them. Filled arrowhead: valley fold; hollow one-sided head: mountain fold; hollow head at the tail: unfold; broad hollow arrow: push (reverse fold). Valley and mountain are as seen from where you look: when the model turns over they swap.</p>
+</main><script type="module" src="/src/main.js"></script></body></html>

@@ -1,0 +1,15 @@
+{
+  "name": "origami-crane-frames",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-23",
+  "workers_dev": true,
+  "vars": {
+    "SITE_ORIGIN": "https://betterworldsoftware.github.io"
+  },
+  "r2_buckets": [
+    {
+      "binding": "BAKE",
+      "bucket_name": "origami-bake"
+    }
+  ]
+}
